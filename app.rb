@@ -9,7 +9,7 @@ require 'runscript'
 
 # Hash containing the configuration.
 CONFIG = YAML.load_file File.expand_path('./config.yml', File.dirname(__FILE__))
-# Version of ass
+# Version of ASS
 ASS_VERSION = '0.1.0'
 
 cwd = File.expand_path('.', CONFIG[:repo_path])
