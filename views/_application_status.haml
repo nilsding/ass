@@ -6,7 +6,7 @@
     = $runscript.status
 
 %form{method: :POST, action: '/start_stop_app'}
-  %button{type: :submit, name: :action, value: :start, disabled: $runscript.status.to_s.start_with?('start') ? true : nil }
+  %button{type: :submit, name: :action, value: :start, disabled: %i(started starting stopping).include?($runscript.status) ? true : nil }
     Start
-  %button{type: :submit, name: :action, value: :stop, disabled: $runscript.status.to_s.start_with?('stop') ? true : nil }
+  %button{type: :submit, name: :action, value: :stop, disabled: %i(stopped stopping starting).include?($runscript.status) ? true : nil }
     Stop
