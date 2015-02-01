@@ -71,6 +71,8 @@ post '/start_stop_app' do
   case params[:action]
   when "start"
     $runscript.run!
+  when "restart"
+    $runscript.restart!
   when "stop"
     $runscript.stop!
   end
