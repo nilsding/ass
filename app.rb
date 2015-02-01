@@ -46,23 +46,6 @@ post '/git' do
       $runscript.sh "git checkout -b #{params[:branch]} --force --track origin/#{params[:branch]}"
     end
     $runscript.sh "git pull"
-    # begin
-    # # something using $git.checkout(params[:branch]) (which never worked btw)
-    # rescue Git::GitExecuteError => e
-    #   $runscript._puts "#{Time.now.to_s} | SEVERE: Merge conflict or something bad happened!  Resetting everything."
-    #
-    #   status = $runscript.status
-    #   $runscript.stop!
-    #   $runscript.sh 'cd ..'
-    #   $runscript.sh "rm -rf #{cwd}"
-    #   FileUtils.mkdir_p(cwd)
-    #   $runscript.cwd = cwd
-    #
-    #   $runscript._puts "#{Time.now.to_s} | Cloning git repo to #{cwd}"
-    #   Git.clone(CONFIG[:git_repo], cwd)
-    #
-    #   $runscript.run! if status == :started
-    # end
   end
   redirect '/'
 end
