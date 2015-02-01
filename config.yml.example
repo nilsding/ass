@@ -1,0 +1,11 @@
+# The to be used git repo.
+:git_repo: 'git@github.com:nilsding/nblog.git'
+
+# Where to clone the git repo; this is also used for the current working directory.
+:repo_path: './tmp/nblog'
+
+# The runscript to use.
+:runscript: './scripts/simple-test.rb'
+
+# How many lines of log output should be displayed?
+:log_lines: 500

@@ -1,0 +1,12 @@
+%h2 Application status
+
+%p
+  The application is
+  = succeed '.' do
+    = $runscript.status
+
+%form{method: :POST, action: '/start_stop_app'}
+  %button{type: :submit, name: :action, value: :start, disabled: $runscript.status.to_s.start_with?('start') ? true : nil }
+    Start
+  %button{type: :submit, name: :action, value: :stop, disabled: $runscript.status.to_s.start_with?('stop') ? true : nil }
+    Stop

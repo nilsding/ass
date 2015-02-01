@@ -1,0 +1,9 @@
+%h2
+  Application log
+  %small
+    (last
+    = CONFIG[:log_lines]
+    lines)
+
+.log
+  %pre= `tail -n #{CONFIG[:log_lines]} #{$runscript.tmp_file.path}`

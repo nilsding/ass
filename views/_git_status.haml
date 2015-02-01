@@ -1,0 +1,25 @@
+%h2 Git status
+- current_branch = $git.current_branch
+%table
+  %tr
+    %th Branch
+    %td
+      %code= current_branch
+  %tr
+    %th Commit
+    %td
+      - last = $git.gblob(current_branch).log.first
+      %code= last.sha[0...8]
+      (#{last.author.name})
+      = last.message
+
+%h3 Actions
+%form{method: :POST, action: '/git'}
+  %button{type: :submit, name: :action, value: :pull} Pull
+  %button{type: :submit, name: :action, value: :fetch} Fetch
+  %br/
+  %select{name: :branch, autocomplete: :off}
+    - $git.branches.remote.each do |branch|
+      - unless branch.name.start_with? "HEAD"
+        %option{value: branch.name, selected: branch.name == current_branch ? 'selected' : nil }= branch.name
+  %button{type: :submit, name: :action, value: :branch} Switch branch
