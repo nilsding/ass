@@ -8,7 +8,7 @@
 %form{method: :POST, action: '/start_stop_app'}
   %button{type: :submit, name: :action, value: :start, disabled: %i(started starting stopping).include?($runscript.status) ? true : nil }
     Start
-  %button{type: :submit, name: :action, value: :restart, disabled: %i(starting stopping).include?($runscript.status) ? true : nil }
+  %button{type: :submit, name: :action, value: :restart, disabled: %i(stopped starting stopping).include?($runscript.status) ? true : nil }
     Restart
   %button{type: :submit, name: :action, value: :stop, disabled: %i(stopped stopping starting).include?($runscript.status) ? true : nil }
     Stop
