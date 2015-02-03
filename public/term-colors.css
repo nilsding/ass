@@ -1,0 +1,22 @@
+/* https://github.com/buildkite/terminal/blob/master/app/assets/stylesheets/terminal.css */
+
+.term-fg1 { } /* don't bold beccause it looks weird */
+.term-fg3 { font-style: italic; } /* italic */
+.term-fg4 { text-decoration: underline; } /* underline */
+.term-fg9 { text-decoration: line-through; } /* crossed-out */
+.term-fg30 { color: #666; } /* black (but we can't use black, so a diff color) */
+.term-fg31 { color: #e10c02; } /* red */
+.term-fg32 { color: #99ff5e; } /* green */
+.term-fg33 { color: #c6c502; } /* yellow */
+.term-fg34 { color: #8db7e0; } /* blue */
+.term-fg35 { color: #f271fb; } /* magenta */
+.term-fg36 { color: #00cdd9; } /* cyan */
+/* high intense colors */
+.term-fgi1 { color: #5ef765; }
+.term-fgi90 { color: #838887; } /* grey */
+/* background colors */
+.term-bg42 { background: #99ff5f; }
+.term-bg40 { background: #676767; }
+/* custom foreground/background combos for readability */
+.term-fg31.term-bg40 { color: #F8A39F; }
+

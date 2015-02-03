@@ -5,6 +5,7 @@ gem 'haml'
 gem 'thin'
 gem 'git'
 gem 'childprocess'
+gem 'terminal'
 
 group :development do
   gem 'yard'

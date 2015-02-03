@@ -3,6 +3,7 @@ require 'git'
 require 'haml'
 require 'yaml'
 require 'sinatra'
+require 'terminal'
 require 'fileutils'
 $LOAD_PATH.unshift File.expand_path './lib', File.dirname(__FILE__)
 require 'runscript'

@@ -6,4 +6,4 @@
     lines)
 
 .log
-  %pre= `tail -n #{CONFIG[:log_lines]} #{$runscript.tmp_file.path}`
+  %pre= Terminal.render `tail -n #{CONFIG[:log_lines]} #{$runscript.tmp_file.path}`
