@@ -12,11 +12,13 @@
       %code= last.sha[0...8]
       (#{last.author.name})
       = last.message
-
+      
 %h3 Actions
 %form{method: :POST, action: '/git'}
   %button{type: :submit, name: :action, value: :pull} Pull
   %button{type: :submit, name: :action, value: :fetch} Fetch
+  %button{type: :submit, name: :action, value: :panic, onclick: 'return confirm("This will reset the entire Git repository!\nOnly use this if you really fucked up the Git repo.")'}
+    %font{color: 'red'} Panic
   %br/
   %select{name: :branch, autocomplete: :off}
     - $git.branches.remote.each do |branch|

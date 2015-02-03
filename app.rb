@@ -46,6 +46,20 @@ post '/git' do
       $runscript.sh "git checkout -b #{params[:branch]} --force --track origin/#{params[:branch]}"
     end
     $runscript.sh "git pull"
+  when "panic"
+   $runscript._puts "#{Time.now.to_s} | Panic button clicked!  Resetting Git repo"
+
+   status = $runscript.status
+   $runscript.stop!
+   $runscript.sh 'cd ..'
+   $runscript.sh "rm -rf #{cwd}"
+   FileUtils.mkdir_p(cwd)
+   $runscript.cwd = cwd
+
+   $runscript._puts "#{Time.now.to_s} | Cloning git repo to #{cwd}"
+   Git.clone(CONFIG[:git_repo], cwd)
+
+   $runscript.run! if status == :started
   end
   redirect '/'
 end
