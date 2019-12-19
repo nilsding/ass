@@ -11,7 +11,7 @@ GEM
     git (1.2.9.1)
     haml (4.0.6)
       tilt
-    rack (1.6.0)
+    rack (1.6.12)
     rack-protection (1.5.3)
       rack
     sinatra (1.4.5)
